@@ -1,0 +1,68 @@
+GET http://127.0.0.1:3000
+
+###
+GET http://127.0.0.1:3000/json
+
+### sign-up
+POST http://127.0.0.1:3000/auth/sign-up
+Content-Type: application/json
+
+{
+    "email": "swannmaurice1@gmail.com",
+    "name": "Dev Christopher",
+    "age": "18",
+    "field": "Web Dev",
+    "password": "2026"
+}
+
+### sign-in
+POST http://127.0.0.1:3000/auth/sign-in
+Content-Type: application/json
+
+{
+    "email": "swannmaurice1@gmail.com",
+    "password": "2026"
+}
+
+### forgot password
+POST http://127.0.0.1:3000/auth/forgot-password
+Content-Type: application/json
+
+{
+    "email": "swannmaurice1@gmail.com"
+}
+
+### reset password
+POST http://127.0.0.1:3000/auth/reset-password
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzd2Fubm1hdXJpY2UxQGdtYWlsLmNvbSIsImlhdCI6MTc3NDg2ODM4NiwiZXhwIjoxNzc1NDczMTg2fQ.5CUR_K6-tHGLl_J5XOjcwzixDF7xwGlV7XYVHthDjtc",
+    "password": "newPassword"
+}
+
+
+### Get profile
+GET http://127.0.0.1:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzd2Fubm1hdXJpY2UxQGdtYWlsLmNvbSIsImlhdCI6MTc3NTczMzk3MiwiZXhwIjoxNzc2MzM4NzcyfQ.zdkA9F1gg3fP_GjxeNUaKnxRK6RHlYpxWPeRMyMJAZw
+
+### Update profile
+PUT http://127.0.0.1:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzd2Fubm1hdXJpY2UxQGdtYWlsLmNvbSIsImlhdCI6MTc3NTczMzk3MiwiZXhwIjoxNzc2MzM4NzcyfQ.zdkA9F1gg3fP_GjxeNUaKnxRK6RHlYpxWPeRMyMJAZw
+Content-Type: application/json
+
+{
+"name": "~Morgan-CyberTech~",
+"age": 20,
+"field": "Backend"
+}
+
+### Change password
+PATCH http://127.0.0.1:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzd2Fubm1hdXJpY2UxQGdtYWlsLmNvbSIsImlhdCI6MTc3NDg2ODM4NiwiZXhwIjoxNzc1NDczMTg2fQ.5CUR_K6-tHGLl_J5XOjcwzixDF7xwGlV7XYVHthDjtc
+Content-Type: application/json
+
+{
+"oldPassword": "2026",
+"newPassword": "2027"
+}
